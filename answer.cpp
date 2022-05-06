@@ -36,17 +36,27 @@ int main()
         cin>>arr2[i];
     }
 
-    /*
-        開始做主要運算
-    */
+
+    for(int i=0; i<buff; i++)
+    {
+        cout<<arr1[i]<<" ";
+    }
+    cout<<endl;
+    for(int i=0; i<buff; i++)
+    {
+        cout<<arr2[i]<<" ";
+    }
+    cout<<endl;
 
     double c = arr2[0];
     int counter = 0;
 
     for(int i = 0; i<buff; i++,sp--)
     {
+        cout<<"sp:"<<sp<<endl;
         if(sp < (q+1))
         {
+            cout<<"Done\n";
             break;
         }
 
@@ -58,30 +68,29 @@ int main()
             arr1[i+j]=arr1[i+j]-(arr2[j]*mult);
         }
 
+        cout<<"c:"<<c<<endl;
+        cout<<"mult:"<<mult<<endl;
+        cout<<"arr1[] now:"<<endl;
+        for(int z=0; z<buff; z++)
+            cout<<arr1[z]<<" ";
+        cout<<endl;
+
     }
 
-/*
-    底下就只是處理輸出
-*/
-    cout<<"商:";
 
-    for(int i =0; i<counter; i++)
+    cout<<"商:";
+    for(int i=0; i<buff; i++)
     {
-        cout<<arr3[i]<<"x^"<<(counter-i-1)<<" ";
+        cout<<arr3[i]<<" ";
     }
     cout<<endl;
 
     cout<<"餘式:";
-
-    bool start = false;
-
-    for(int i=0; i<=(q+1);i++)
+    for(int i=0; i<buff; i++)
     {
-        if(arr1[i]!=0)
-            start = true;
-        if(start)
-        {
-            cout<<arr1[i]<<"x^"<<(q-i+1)<<" ";
-        }
+        cout<<arr1[i]<<" ";
     }
+
+    cout<<endl;
+
 }
